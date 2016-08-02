@@ -16,10 +16,6 @@ DerivedData
 *.ipa
 *.xcuserstate
 
-# CocoaPod
-NCMBTests/Pods/*
-Podfile.lock
-
 # others
 *.swp
 !.gitkeep

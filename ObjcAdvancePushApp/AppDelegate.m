@@ -17,8 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 【mBaaS】 APIキーの設定とSDKの初期化
-    [NCMB setApplicationKey:@"88a6ed3d15d7b96059fcba6026141042ba31bc794b577e0cea81ab53c356ddb7"
-                  clientKey:@"6d9dea5b41946f70b4b2a089ebc5a2b79c3a3c6d70688feddd302dc71d2203ff"];
+    [NCMB setApplicationKey:@"YOUR_NCMB_APPLICATIONKEY"
+                  clientKey:@"YOUR_NCMB_CLIENTKEY"];
     
     // 【mBaaS：プッシュ通知①】デバイストークンの取得
     // デバイストークンの要求
