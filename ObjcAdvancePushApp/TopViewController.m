@@ -30,7 +30,7 @@
 
 @end
 // テーブル表示件数
-const NSInteger NUMBER_OF_SHOPS = 4;
+const NSInteger NUMBER_OF_SHOPS_TOP = 4;
 NSString *const GENDER_CONFIG[] = {@"男性", @"女性"};
 @implementation TopViewController
 
@@ -76,7 +76,7 @@ NSString *const GENDER_CONFIG[] = {@"男性", @"女性"};
 
 // shopTableViewのセル表示数を設定
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return NUMBER_OF_SHOPS;
+    return NUMBER_OF_SHOPS_TOP;
 }
 // shopTableViewのセルの内容を設定
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

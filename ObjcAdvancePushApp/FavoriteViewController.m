@@ -24,7 +24,7 @@
 @end
 
 // テーブル表示件数
-const NSInteger NUMBER_OF_SHOPS = 4;
+const NSInteger NUMBER_OF_SHOPS_FAVORITE = 4;
 
 @implementation FavoriteViewController
 
@@ -44,7 +44,7 @@ const NSInteger NUMBER_OF_SHOPS = 4;
 
 // favoriteTableViewのセル表示数を設定
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return NUMBER_OF_SHOPS;
+    return NUMBER_OF_SHOPS_FAVORITE;
 }
 // favoriteTableViewのセルの内容を設定
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
