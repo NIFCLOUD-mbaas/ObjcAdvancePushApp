@@ -11,8 +11,6 @@
 		9D33BCE41D48962B001FC5A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D33BCE31D48962B001FC5A5 /* AppDelegate.m */; };
 		9D33BCEC1D48962B001FC5A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D33BCEB1D48962B001FC5A5 /* Assets.xcassets */; };
 		9D33BCEF1D48962B001FC5A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D33BCED1D48962B001FC5A5 /* LaunchScreen.storyboard */; };
-		9D33BCFA1D48962B001FC5A5 /* ObjcAdvancePushAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D33BCF91D48962B001FC5A5 /* ObjcAdvancePushAppTests.m */; };
-		9D33BD051D48962B001FC5A5 /* ObjcAdvancePushAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D33BD041D48962B001FC5A5 /* ObjcAdvancePushAppUITests.m */; };
 		9D33BD131D4896B9001FC5A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D33BD121D4896B9001FC5A5 /* Main.storyboard */; };
 		9D33BD161D48970A001FC5A5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D33BD151D48970A001FC5A5 /* LoginViewController.m */; };
 		9D411FE91D507B9000ADD0D2 /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D411FE21D507B9000ADD0D2 /* ShopViewController.m */; };
@@ -54,11 +52,7 @@
 		9D33BCEE1D48962B001FC5A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D33BCF01D48962B001FC5A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D33BCF51D48962B001FC5A5 /* ObjcAdvancePushAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjcAdvancePushAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D33BCF91D48962B001FC5A5 /* ObjcAdvancePushAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjcAdvancePushAppTests.m; sourceTree = "<group>"; };
-		9D33BCFB1D48962B001FC5A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D33BD001D48962B001FC5A5 /* ObjcAdvancePushAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjcAdvancePushAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D33BD041D48962B001FC5A5 /* ObjcAdvancePushAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjcAdvancePushAppUITests.m; sourceTree = "<group>"; };
-		9D33BD061D48962B001FC5A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D33BD121D4896B9001FC5A5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9D33BD141D48970A001FC5A5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		9D33BD151D48970A001FC5A5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -116,8 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				9D33BCDE1D48962A001FC5A5 /* ObjcAdvancePushApp */,
-				9D33BCF81D48962B001FC5A5 /* ObjcAdvancePushAppTests */,
-				9D33BD031D48962B001FC5A5 /* ObjcAdvancePushAppUITests */,
 				9D33BCDD1D48962A001FC5A5 /* Products */,
 				AA10A9493E6B6C0E1ED830F4 /* Pods */,
 				376B632031D969DDD40A51B4 /* Frameworks */,
@@ -170,24 +162,6 @@
 				9D33BCE01D48962A001FC5A5 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9D33BCF81D48962B001FC5A5 /* ObjcAdvancePushAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				9D33BCF91D48962B001FC5A5 /* ObjcAdvancePushAppTests.m */,
-				9D33BCFB1D48962B001FC5A5 /* Info.plist */,
-			);
-			path = ObjcAdvancePushAppTests;
-			sourceTree = "<group>";
-		};
-		9D33BD031D48962B001FC5A5 /* ObjcAdvancePushAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				9D33BD041D48962B001FC5A5 /* ObjcAdvancePushAppUITests.m */,
-				9D33BD061D48962B001FC5A5 /* Info.plist */,
-			);
-			path = ObjcAdvancePushAppUITests;
 			sourceTree = "<group>";
 		};
 		AA10A9493E6B6C0E1ED830F4 /* Pods */ = {
@@ -397,7 +371,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D33BCFA1D48962B001FC5A5 /* ObjcAdvancePushAppTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,7 +378,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D33BD051D48962B001FC5A5 /* ObjcAdvancePushAppUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,7 +31,9 @@
 @end
 // テーブル表示件数
 const NSInteger NUMBER_OF_SHOPS_TOP = 4;
+/** ▼初回ユーザー情報登録画面用▼ **/
 static NSArray *GENDER_CONFIG = nil;
+/** ▲初回ユーザー情報登録画面用▲**/
 @implementation TopViewController
 
 - (void)viewDidLoad {
