@@ -31,7 +31,7 @@
 @end
 // テーブル表示件数
 const NSInteger NUMBER_OF_SHOPS_TOP = 4;
-NSString *const GENDER_CONFIG[] = {@"男性", @"女性"};
+static NSArray *GENDER_CONFIG = nil;
 @implementation TopViewController
 
 - (void)viewDidLoad {
@@ -41,6 +41,7 @@ NSString *const GENDER_CONFIG[] = {@"男性", @"女性"};
     self.shopTableView.dataSource = self;
     // AppDelegate
     self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    GENDER_CONFIG = @[@"男性", @"女性"];
     // ユーザー情報が未登録の場合
     if (![self.appDelegate.current_user objectForKey:@"nickname"]) {
         // ユーザー情報登録Viewを表示
@@ -110,7 +111,6 @@ NSString *const GENDER_CONFIG[] = {@"男性", @"女性"};
         // TableViewのindex.rowの値をShopViewへ渡す
         ShopViewController *shopViewController = (ShopViewController *)segue.destinationViewController;
         shopViewController.shopIndex = [sender intValue];
-        NSLog(@"%d",shopViewController.shopIndex);
     }
 }
 
@@ -154,11 +154,7 @@ NSString *const GENDER_CONFIG[] = {@"男性", @"女性"};
     genderLabel.textColor = [UIColor whiteColor];
     genderLabel.font = [UIFont boldSystemFontOfSize:10];
     
-    NSMutableArray *genderConfig = [NSMutableArray array];
-    for (int i = 0; i <= sizeof(genderConfig) / sizeof(genderConfig[0]); i++) {
-        [genderConfig addObject:GENDER_CONFIG[i]];
-    }
-    self.genderSegCon = [[UISegmentedControl alloc]initWithItems:genderConfig];
+    self.genderSegCon = [[UISegmentedControl alloc]initWithItems:GENDER_CONFIG];
     self.genderSegCon.frame = CGRectMake((self.view.bounds.size.width/2)*0.35, (self.view.bounds.size.height)*0.44, (self.view.bounds.size.width)*0.65, 30);
     [self.genderSegCon addTarget:self action:@selector(segConChanged:) forControlEvents:UIControlEventValueChanged];
     self.genderSegCon.tintColor = [UIColor colorWithRed:0.243 green:0.627 blue:0.929 alpha:1];
@@ -174,7 +170,6 @@ NSString *const GENDER_CONFIG[] = {@"男性", @"女性"};
     self.prefecture.font = [UIFont systemFontOfSize:14];
     self.prefecture.backgroundColor = [UIColor whiteColor];
     self.prefecture.delegate = self;
-    self.prefecture.keyboardType = UIKeyboardTypeNumberPad;
     // viewLabelを生成
     self.viewLabel = [[UILabel alloc]initWithFrame:CGRectMake((self.view.bounds.size.width/2)*0.35, (self.view.bounds.size.height)*0.65, (self.view.bounds.size.width)*0.65, 30)];
     self.viewLabel.font = [UIFont systemFontOfSize:15];
@@ -207,10 +202,13 @@ NSString *const GENDER_CONFIG[] = {@"男性", @"女性"};
     switch (sender.selectedSegmentIndex) {
         case 0:
             NSLog(@"男性");
+            break;
         case 1:
             NSLog(@"女性");
+            break;
         default:
             NSLog(@"NG");
+            break;
     }
 }
 

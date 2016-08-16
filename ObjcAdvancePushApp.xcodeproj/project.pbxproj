@@ -525,14 +525,14 @@
 			baseConfigurationReference = 7BA438EBFCF8096FC6DB3F2A /* Pods-ObjcAdvancePushApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: daisuke fujii (J4HZAPC3F3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: daisuke fujii (J4HZAPC3F3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ObjcAdvancePushApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.natsumo.ikeda.ncmb.push.SwiftAdvancePushApp;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.natsumo.ikeda.ncmb.push.ObjcAdvancePushApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "801c449e-8c04-49d0-8b54-bfe56ab433ff";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -544,9 +544,9 @@
 				INFOPLIST_FILE = ObjcAdvancePushApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.natsumo.ikeda.ncmb.push.SwiftAdvancePushApp;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.natsumo.ikeda.ncmb.push.ObjcAdvancePushApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "801c449e-8c04-49d0-8b54-bfe56ab433ff";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

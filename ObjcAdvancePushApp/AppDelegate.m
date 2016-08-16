@@ -48,7 +48,7 @@
         NSDictionary *remoteNotification = [launchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"];
         [NCMBPush handleRichPush:remoteNotification];
         
-        // 【mBaaS：プッシュ通知⑦】アプリが起動されたときにプッシュ通知の情報（ペイロード）からデータを取得する
+        // 【mBaaS：プッシュ通知⑧】アプリが起動されたときにプッシュ通知の情報（ペイロード）からデータを取得する
         // プッシュ通知情報の取得
         NSString *deliveryTime = [remoteNotification objectForKey:@"deliveryTime"];
         NSString *message = [remoteNotification objectForKey:@"message"];
@@ -80,7 +80,7 @@
     }];
 }
 
-// 【mBaaS：プッシュ通知⑧】アプリが起動中にプッシュ通知の情報（ペイロード）からデータを取得する
+// 【mBaaS：プッシュ通知⑦】アプリが起動中にプッシュ通知の情報（ペイロード）からデータを取得する
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     // プッシュ通知情報の取得
     NSString *deliveryTime = [userInfo objectForKey:@"deliveryTime"];
@@ -108,10 +108,11 @@
 
 // LocalNotification配信
 - (void)localNotificationDeliver:(NSString *)deliveryTime message:(NSString *)message {
-    // 配信時間(String→NSDate)
+    // 配信時間(String→NSDate)を設定
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
     NSDate *deliveryTimeDate = [formatter dateFromString:deliveryTime];
+    // ローカルプッシュを作成
     [LocalNotificationManager scheduleLocalNotificationAtData:deliveryTimeDate alertBody:message userInfo:nil];
 }
 
