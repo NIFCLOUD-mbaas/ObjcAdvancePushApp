@@ -21,78 +21,27 @@
                   clientKey:@"YOUR_NCMB_CLIENTKEY"];
     
     // 【mBaaS：プッシュ通知①】デバイストークンの取得
-    // デバイストークンの要求
-    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1){
-        /** iOS8以上 **/
-        //通知のタイプを設定したsettingを用意
-        UIUserNotificationType type = UIUserNotificationTypeAlert |
-        UIUserNotificationTypeBadge |
-        UIUserNotificationTypeSound;
-        UIUserNotificationSettings *setting;
-        setting = [UIUserNotificationSettings settingsForTypes:type
-                                                    categories:nil];
-        //通知のタイプを設定
-        [[UIApplication sharedApplication] registerUserNotificationSettings:setting];
-        //DevoceTokenを要求
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
-    } else {
-        /** iOS8未満 **/
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
-         (UIRemoteNotificationTypeAlert |
-          UIRemoteNotificationTypeBadge |
-          UIRemoteNotificationTypeSound)];
-    }
+    
     
     NSDictionary *remoteNotification = [launchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"];
     if (remoteNotification) {
         // 【mBaaS：プッシュ通知⑥】リッチプッシュ通知を表示させる処理
-        [NCMBPush handleRichPush:remoteNotification];
+        
         
         // 【mBaaS：プッシュ通知⑧】アプリが起動されたときにプッシュ通知の情報（ペイロード）からデータを取得する
-        // プッシュ通知情報の取得
-        NSString *deliveryTime = [remoteNotification objectForKey:@"deliveryTime"];
-        NSString *message = [remoteNotification objectForKey:@"message"];
         
-        if (deliveryTime && message) {
-            // ローカルプッシュ配信
-            [self localNotificationDeliver:deliveryTime message:message];
-        }
+        
     }
     
     return YES;
 }
 
 // 【mBaaS：プッシュ通知②】デバイストークンの取得後に呼び出されるメソッド
-- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken{
-    // 端末情報を扱うNCMBInstallationのインスタンスを作成
-    NCMBInstallation *installation = [NCMBInstallation currentInstallation];
-    // デバイストークンを設定
-    [installation setDeviceTokenFromData:deviceToken];
-    // 端末情報をデータストアに登録
-    [installation saveInBackgroundWithBlock:^(NSError *error) {
-        if(error){
-            // 端末情報の登録が失敗した場合の処理
-            NSLog(@"デバイストークン取得に失敗しました:%@",error);
-        } else {
-            // 端末情報の登録に成功した時の処理
-            NSLog(@"デバイストークン取得に成功しました");
-        }
-    }];
-}
+
 
 // 【mBaaS：プッシュ通知⑦】アプリが起動中にプッシュ通知の情報（ペイロード）からデータを取得する
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    // プッシュ通知情報の取得
-    NSString *deliveryTime = [userInfo objectForKey:@"deliveryTime"];
-    NSString *message = [userInfo objectForKey:@"message"];
-    // 値を取得した後の処理
-    if (deliveryTime && message) {
-        NSLog(@"ペイロードを取得しました：deliveryTime[%@],message[%@]",deliveryTime,message);
-        // ローカルプッシュ配信
-        [self localNotificationDeliver:deliveryTime message:message];
-    }
-}
 
+    
 // プッシュ通知が許可された場合に呼ばれるメソッド
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
     UIUserNotificationType allowedType = notificationSettings.types;

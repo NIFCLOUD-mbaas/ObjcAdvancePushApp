@@ -34,21 +34,7 @@
 /** Top画面のTableViewのcell **/
 - (void)setCell_top:(NCMBObject *)object {
     // 【mBaaS：ファイルストア①】icon画像の取得
-    // 取得した「Shop」クラスデータからicon名を取得
-    NSString *imageName = [object objectForKey:@"icon_image"];
-    // ファイル名を設定
-    NCMBFile *imageFile = [NCMBFile fileWithName:imageName data:nil];
-    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-        if (error) {
-            // ファイル取得失敗時の処理
-            NSLog(@"icon画像の取得に失敗しました:%ld",(long)error.code);
-        } else {
-            // ファイル取得成功時の処理
-            NSLog(@"icon画像の取得に成功しました");
-            // icon画像を設定
-            self.iconImageView_top.image = [[UIImage alloc]initWithData:data];
-        }
-    }];
+
     
     // Shop名を設定
     self.shopName_top.text = [object objectForKey:@"name"];
