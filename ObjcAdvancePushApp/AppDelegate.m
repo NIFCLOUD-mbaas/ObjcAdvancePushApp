@@ -43,9 +43,9 @@
           UIRemoteNotificationTypeSound)];
     }
     
-    // 【mBaaS：プッシュ通知⑥】リッチプッシュ通知を表示させる処理
-    if (launchOptions) {
-        NSDictionary *remoteNotification = [launchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"];
+    NSDictionary *remoteNotification = [launchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"];
+    if (remoteNotification) {
+        // 【mBaaS：プッシュ通知⑥】リッチプッシュ通知を表示させる処理
         [NCMBPush handleRichPush:remoteNotification];
         
         // 【mBaaS：プッシュ通知⑧】アプリが起動されたときにプッシュ通知の情報（ペイロード）からデータを取得する
