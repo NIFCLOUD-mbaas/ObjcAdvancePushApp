@@ -268,8 +268,9 @@ static NSArray *GENDER_CONFIG = nil;
         }
     }];
 }
-
 /** ▲初回ユーザー情報登録画面の処理▲ **/
+
+// 背景タップ時にキーボードを隠す
 - (void)tapScreen:(UITapGestureRecognizer *)sencder {
     [self.view endEditing:YES];
 }
