@@ -31,9 +31,8 @@
 @end
 // テーブル表示件数
 const NSInteger NUMBER_OF_SHOPS_TOP = 4;
-/** ▼初回ユーザー情報登録画面用▼ **/
+// 初回ユーザー情報登録画面用
 static NSArray *GENDER_CONFIG = nil;
-/** ▲初回ユーザー情報登録画面用▲**/
 @implementation TopViewController
 
 - (void)viewDidLoad {
@@ -43,6 +42,7 @@ static NSArray *GENDER_CONFIG = nil;
     self.shopTableView.dataSource = self;
     // AppDelegate
     self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    // 初回ユーザー情報登録画面用
     GENDER_CONFIG = @[@"男性", @"女性"];
     // ユーザー情報が未登録の場合
     if (![self.appDelegate.current_user objectForKey:@"nickname"]) {
