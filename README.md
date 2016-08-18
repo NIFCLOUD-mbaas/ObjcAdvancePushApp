@@ -824,23 +824,6 @@ if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1){
 
 ```objc
 // 【mBaaS：プッシュ通知②】デバイストークンの取得後に呼び出されるメソッド
-func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData){
-    // 端末情報を扱うNCMBInstallationのインスタンスを作成
-    let installation = NCMBInstallation.currentInstallation()
-    // デバイストークンの設定
-    installation.setDeviceTokenFromData(deviceToken)
-    // 端末情報をデータストアに登録
-    installation.saveInBackgroundWithBlock { (error: NSError!) -> Void in
-        if error != nil {
-            // 端末情報の登録に失敗した時の処理
-
-        }else{
-            // 端末情報の登録に成功した時の処理
-
-        }
-    }
-}
-// 【mBaaS：プッシュ通知②】デバイストークンの取得後に呼び出されるメソッド
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken{
     // 端末情報を扱うNCMBInstallationのインスタンスを作成
     NCMBInstallation *installation = [NCMBInstallation currentInstallation];
@@ -849,7 +832,7 @@ func application(application: UIApplication, didRegisterForRemoteNotificationsWi
     // 端末情報をデータストアに登録
     [installation saveInBackgroundWithBlock:^(NSError *error) {
         if(error){
-            // 端末情報の登録が失敗した場合の処理
+            // 端末情報の登録に失敗した時の処理
 
         } else {
             // 端末情報の登録に成功した時の処理
@@ -965,20 +948,6 @@ self.nicknameLabel.text = [NSString stringWithFormat:@"%@さん、こんにち�
 * 同様に、お気に入り画面でお気に入り情報が更新されるたびに、installation情報を書き換えられます
 
 ```objc
-// 【mBaaS：プッシュ通知④】installationにユーザー情報を紐づける
-let installation: NCMBInstallation? = NCMBInstallation.currentInstallation()
-if installation != nil {
-    // お気に入り情報を設定
-    installation!.setObject(self.appDelegate.favoriteObjectIdTemporaryArray, forKey: "favorite")
-    // installation情報の更新
-    installation!.saveInBackgroundWithBlock({ (error: NSError!) -> Void in
-        if error != nil {
-            // installation更新失敗時の処理
-        } else {
-            // installation更新成功時の処理
-        }
-    })
-}
 // 【mBaaS：プッシュ通知④】installationにユーザー情報を紐づける
 NCMBInstallation *installation = [NCMBInstallation currentInstallation];
 if (installation) {
