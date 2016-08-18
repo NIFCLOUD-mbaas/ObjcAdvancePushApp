@@ -52,7 +52,6 @@
         // プッシュ通知情報の取得
         NSString *deliveryTime = [remoteNotification objectForKey:@"deliveryTime"];
         NSString *message = [remoteNotification objectForKey:@"message"];
-        
         if (deliveryTime && message) {
             // ローカルプッシュ配信
             [self localNotificationDeliver:deliveryTime message:message];
@@ -72,7 +71,7 @@
     [installation saveInBackgroundWithBlock:^(NSError *error) {
         if(error){
             // 端末情報の登録が失敗した場合の処理
-            NSLog(@"デバイストークン取得に失敗しました:%@",error);
+            NSLog(@"デバイストークン取得に失敗しました:%ld",(long)error.code);
         } else {
             // 端末情報の登録に成功した時の処理
             NSLog(@"デバイストークン取得に成功しました");
