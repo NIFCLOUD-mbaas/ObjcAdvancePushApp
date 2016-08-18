@@ -93,7 +93,7 @@ layout: false
  * 後で処理を実装します
 
 ```objc
-NCMB.setApplicationKey("YOUR_NCMB_APPLICATIONKEY", clientKey: "YOUR_NCMB_CLIENTKEY")
+[NCMB setApplicationKey:@"YOUR_NCMB_APPLICATIONKEY" clientKey:@"YOUR_NCMB_CLIENTKEY"];
 ```
 
 ---
@@ -246,21 +246,12 @@ layout: false
 
 ```objc
 // 【mBaaS：会員管理①】会員登録用メールを要求する
-NCMBUser.requestAuthenticationMailInBackground(address.text) { (error: NSError!) -> Void in
-    if error != nil {
-        // 会員登録用メールの要求失敗時の処理
-
-    } else {
-        // 会員登録用メールの要求失敗時の処理
-
-    }
-}
 [NCMBUser requestAuthenticationMailInBackground:self.address.text block:^(NSError *error) {
     if (error) {
-        // ログイン失敗時の処理
+        // 会員登録用メールの要求失敗時の処理
 
     } else {
-        // ログイン成功時の処理
+        // 会員登録用メールの要求失敗時の処理
 
     }
 }];
