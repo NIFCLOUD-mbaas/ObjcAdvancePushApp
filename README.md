@@ -1,4 +1,4 @@
 # ObjcAdvancePushApp
 
-https://github.com/natsumo/SwiftAdvancePushApp
+https://github.com/NIFTYCloud-mbaas/SwiftAdvancePushApp
 のObjective-cバージョンです。
