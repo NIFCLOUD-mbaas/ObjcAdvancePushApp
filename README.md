@@ -2,12 +2,12 @@ name: inverse
 layout: true
 class: center, middle, inverse
 ---
-# <span style="font-size: 30%">【Objc編】ニフティクラウドmobile backend レベルアップセミナー</span><br>__クーポン配信アプリ<br>を作ろう！__</span>
+# <span style="font-size: 30%">【Objective-C編】ニフティクラウドmobile backend レベルアップセミナー</span><br>__クーポン配信アプリ<br>を作ろう！__</span>
 
-@natsumo
+@ニフティ株式会社
 
 .footnote[
-20160804作成
+20160829作成
 ]
 ---
 layout: false
@@ -26,8 +26,8 @@ layout: false
 
 .left-column[
   .center[
-  180分でアプリ完成させます
-  ![180分セミナー](readme-image/seminar/180分セミナー.png)
+  150分でアプリ完成させます
+  ![150分セミナー](readme-image/seminar/150分セミナー.png)
   ]
 ]
 .right-column[
@@ -566,10 +566,10 @@ NCMBFile *imageFile = [NCMBFile fileWithName:imageName data:nil];
 [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
     if (error) {
         // ファイル取得失敗時の処理
-        
+
     } else {
         // ファイル取得成功時の処理
-        
+
     }
 }];
 ```
@@ -1421,7 +1421,7 @@ layout: false
 * 開催中の[セミナー](https://ncmb.doorkeeper.jp/)のご案内
  * 随時新しいセミナーを実施していきますのでぜひチェックしてください！
 * ハンズオン内容が実装された完全版プロジェクト
- * __[objcAdvancePushApp【完成版】](https://github.com/natsumo/objcAdvancePushApp/archive/master.zip)__
+ * __[ObjcAdvancePushApp【完成版】](https://github.com/natsumo/objcAdvancePushApp/archive/master.zip)__
 * コードは[GitHub](https://github.com/natsumo/objcAdvancePushApp)に公開しています
  * __master__：完成版
  * __seminar_version__：セミナー版
