@@ -177,7 +177,7 @@ layout: false
 
 下記リンクをクリックして、ZIPファイルでダウンロードしてください▼<br>
 .size_large[
-　　　 __[ObjcAdvancePushApp](https://github.com/natsumo/ObjcAdvancePushApp/archive/seminar_version.zip)__
+　　　 __[ObjcAdvancePushApp](https://github.com/NIFTYCloud-mbaas/ObjcAdvancePushApp/archive/seminar_version.zip)__
 ]
 
 * ディレクトリにある「__ObjcAdvancePushApp.xcworkspace__」をダブルクリックして、Xcodeを開いてください
@@ -796,9 +796,7 @@ layout: false
 if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1){
     /** iOS8以上 **/
     //通知のタイプを設定したsettingを用意
-    UIUserNotificationType type = UIUserNotificationTypeAlert |
-    UIUserNotificationTypeBadge |
-    UIUserNotificationTypeSound;
+    UIUserNotificationType type = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
     UIUserNotificationSettings *setting;
     setting = [UIUserNotificationSettings settingsForTypes:type
     categories:nil];
@@ -808,10 +806,7 @@ if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1){
     [[UIApplication sharedApplication] registerForRemoteNotifications];
 } else {
     /** iOS8未満 **/
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
-    (UIRemoteNotificationTypeAlert |
-    UIRemoteNotificationTypeBadge |
-    UIRemoteNotificationTypeSound)];
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
 }
 ```
 
@@ -1247,7 +1242,7 @@ layout: false
 * 今回は、配信時間とメッセージのデータを設定し、時限式でローカルプッシュを表示させる内容を実装します
  * プッシュ通知に設定するJSON形式のデータの例
  ```text
- {"deliveryTime":"2016-09-22 17:00:00", "message":"タイムセールスタート！"}
+ {"deliveryTime":"2016-09-13 17:00:00", "message":"タイムセールスタート！"}
  ```
 
 ---
@@ -1328,7 +1323,7 @@ if (deliveryTime && message) {
  * JSONデータに設定する時間は、今から__５分以上未来の時間__に変更してください
  * JSONデータに設定するメッセージは、自由に変更してください
  ```text
- {"deliveryTime":"2016-09-22 17:00:00", "message":"タイムセールスタート！"}
+ {"deliveryTime":"2016-09-13 17:00:00", "message":"タイムセールスタート！"}
  ```
  * 作成したらコピーをしておいてください
 
@@ -1352,7 +1347,7 @@ if (deliveryTime && message) {
 * プッシュ通知を受信（サイレント）すると次のログが表示されます
 
 ```text
-ペイロードを取得しました：deliveryTime[2016-09-22 17:00:00],message[タイムセールスタート！]
+ペイロードを取得しました：deliveryTime[2016-09-13 17:00:00],message[タイムセールスタート！]
 ```
 
 * 指定時間にプッシュ通知が表示されることを確認してください
@@ -1381,7 +1376,7 @@ if (deliveryTime && message) {
 * JSON形式のデータを貼り付けます
  * JSONデータ作成　例）翌日のPM5時を設定
  ```text
- {"deliveryTime":"2016-09-22 17:00:00", "message":"タイムセールスタート！"}
+ {"deliveryTime":"2016-09-13 17:00:00", "message":"タイムセールスタート！"}
  ```
  * 時間は今から５分以上未来の時間に変更してください
 
@@ -1421,7 +1416,7 @@ layout: false
 * 開催中の[セミナー](https://ncmb.doorkeeper.jp/)のご案内
  * 随時新しいセミナーを実施していきますのでぜひチェックしてください！
 * ハンズオン内容が実装された完全版プロジェクト
- * __[ObjcAdvancePushApp【完成版】](https://github.com/natsumo/objcAdvancePushApp/archive/master.zip)__
-* コードは[GitHub](https://github.com/natsumo/objcAdvancePushApp)に公開しています
+ * __[ObjcAdvancePushApp【完成版】](https://github.com/NIFTYCloud-mbaas/objcAdvancePushApp/archive/master.zip)__
+* コードは[GitHub](https://github.com/NIFTYCloud-mbaas/objcAdvancePushApp)に公開しています
  * __master__：完成版
  * __seminar_version__：セミナー版
