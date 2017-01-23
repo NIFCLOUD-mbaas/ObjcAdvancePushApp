@@ -40,11 +40,11 @@
     // 【mBaaS：会員管理①】会員登録用メールを要求する
     [NCMBUser requestAuthenticationMailInBackground:self.address.text block:^(NSError *error) {
         if (error) {
-            // ログイン失敗時の処理
+            // 会員登録用メールの要求失敗時の処理
             NSLog(@"エラーが発生しました:%ld",(long)error.code);
             self.statusLabel.text = [NSString stringWithFormat:@"エラーが発生しました:%ld",(long)error.code];
         } else {
-            // ログイン成功時の処理
+            // 会員登録用メールの要求失敗時の処理
             NSLog(@"登録用メールを送信しました");
             self.statusLabel.text = @"登録用メールを送信しました";
             // TextFieldを空にする

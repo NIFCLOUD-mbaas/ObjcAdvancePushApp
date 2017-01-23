@@ -242,29 +242,32 @@ static NSArray *GENDER_CONFIG = nil;
             NSLog(@"ユーザー情報更新に成功しました");
             // AppDelegateに保持していたユーザー情報の更新
             self.appDelegate.current_user = user;
-            // 【mBaaS：プッシュ通知①】installationにユーザー情報を紐づける
+            // 【mBaaS：プッシュ通知③】installationにユーザー情報を紐づける
+            // 使用中端末のinstallation取得
             NCMBInstallation *installation = [NCMBInstallation currentInstallation];
-            // ユーザー情報を設定
-            [installation setObject:self.nickname.text forKey:@"nickname"];
-            [installation setObject:GENDER_CONFIG[self.genderSegCon.selectedSegmentIndex] forKey:@"gender"];
-            [installation setObject:self.prefecture.text forKey:@"prefecture"];
-            [installation setObject:[NSArray new] forKey:@"favorite"];
-            // installation情報の更新
-            [installation saveInBackgroundWithBlock:^(NSError *error) {
-                if (error) {
-                    // installation更新失敗時の処理
-                    NSLog(@"installation更新(ユーザー登録)に失敗しました:%ld",(long)error.code);
-                } else {
-                    // installation更新失敗時の処理
-                    NSLog(@"installation更新(ユーザー登録)に成功しました");
-                    // 画面を閉じる
-                    self.registerView.hidden = YES;
-                    // ニックネーム表示用ラベルの更新
-                    self.nicknameLabel.text = [NSString stringWithFormat:@"%@さん、こんにちは！",[self.appDelegate.current_user objectForKey:@"nickname"]];
-                    // 画面更新
-                    [self checkShop];
-                }
-            }];
+            if (installation) {
+                // ユーザー情報を設定
+                [installation setObject:self.nickname.text forKey:@"nickname"];
+                [installation setObject:GENDER_CONFIG[self.genderSegCon.selectedSegmentIndex] forKey:@"gender"];
+                [installation setObject:self.prefecture.text forKey:@"prefecture"];
+                [installation setObject:[NSArray new] forKey:@"favorite"];
+                // installation情報の更新
+                [installation saveInBackgroundWithBlock:^(NSError *error) {
+                    if (error) {
+                        // installation更新失敗時の処理
+                        NSLog(@"installation更新(ユーザー登録)に失敗しました:%ld",(long)error.code);
+                    } else {
+                        // installation更新成功時の処理
+                        NSLog(@"installation更新(ユーザー登録)に成功しました");
+                        // 画面を閉じる
+                        self.registerView.hidden = YES;
+                        // ニックネーム表示用ラベルの更新
+                        self.nicknameLabel.text = [NSString stringWithFormat:@"%@さん、こんにちは！",[self.appDelegate.current_user objectForKey:@"nickname"]];
+                        // 画面更新
+                        [self checkShop];
+                    }
+                }];
+            }
         }
     }];
 }
