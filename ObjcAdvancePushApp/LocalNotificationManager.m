@@ -3,7 +3,7 @@
 //  ObjcAdvancePushApp
 //
 //  Created by oono on 2016/08/02.
-//  Copyright © 2016年 Nifty. All rights reserved.
+//  Copyright 2017 FUJITSU CLOUD TECHNOLOGIES LIMITED All Rights Reserved.
 //
 
 #import <UIKit/UIKit.h>
