@@ -2,7 +2,7 @@
 //  LocalNotificationManager.h
 //  ObjcAdvancePushApp
 //
-//  Created by oono on 2016/08/02.
+//  Created by FJCT on 2016/08/02.
 //  Copyright 2017 FUJITSU CLOUD TECHNOLOGIES LIMITED All Rights Reserved.
 //
 

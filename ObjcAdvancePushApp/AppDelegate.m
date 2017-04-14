@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  ObjcAdvancePushApp
 //
-//  Created by NIFTY on 2016/07/27.
+//  Created by FJCT on 2016/07/27.
 //  Copyright 2017 FUJITSU CLOUD TECHNOLOGIES LIMITED All Rights Reserved.
 //
 
