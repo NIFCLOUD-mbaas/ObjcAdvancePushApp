@@ -1,4 +1,8 @@
-# ObjcAdvancePushApp
+【Objective-C編】ニフティクラウドmobile backend レベルアップセミナー
+# __クーポン配信アプリを作ろう！__
 
-https://github.com/NIFTYCloud-mbaas/SwiftAdvancePushApp
-のObjective-cバージョンです。
+▼資料はこちら▼
+
+https://natsumo.github.io/ObjcAdvancePushApp/
+
+※ Google Chrome または Firefox 推奨。スクリプトの読み込み許可が必要です。
