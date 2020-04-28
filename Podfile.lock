@@ -1,5 +1,5 @@
 PODS:
-  - NCMB (2.3.3)
+  - NCMB (3.1.0)
 
 DEPENDENCIES:
   - NCMB (from `https://github.com/NIFTYCloud-mbaas/ncmb_ios.git`)
@@ -10,12 +10,12 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   NCMB:
-    :commit: cc06a5deb3636533dd7560087beac180c2d62012
+    :commit: "06072ba57e6ef461cafd20feaa798be0eef0cf8b\nerror: key does not contain a section: cmd\nerror: key does not contain a section: trustexitcode"
     :git: https://github.com/NIFTYCloud-mbaas/ncmb_ios.git
 
 SPEC CHECKSUMS:
-  NCMB: 33829337aeb2e91a0fc1c771eeb77b642f7f6589
+  NCMB: c308972109137bf523ec1830bac16de6a31c25f4
 
-PODFILE CHECKSUM: d898bea281aa8cad91bb89489160283333b9edf7
+PODFILE CHECKSUM: 3e08b1cefcc7b616eaaad1abe3fe56eee90ebacc
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.8.3
