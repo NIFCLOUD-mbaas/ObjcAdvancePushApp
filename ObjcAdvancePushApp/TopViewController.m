@@ -143,6 +143,9 @@ static NSArray *GENDER_CONFIG = nil;
     genderLabel.font = [UIFont boldSystemFontOfSize:10];
     
     self.genderSegCon = [[UISegmentedControl alloc]initWithItems:GENDER_CONFIG];
+    self.genderSegCon.backgroundColor = UIColor.grayColor;
+    [self.genderSegCon setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]} forState:UIControlStateSelected];
+    [self.genderSegCon setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]} forState:UIControlStateNormal];
     self.genderSegCon.frame = CGRectMake((self.view.bounds.size.width/2)*0.35, (self.view.bounds.size.height)*0.44, (self.view.bounds.size.width)*0.65, 30);
     [self.genderSegCon addTarget:self action:@selector(segConChanged:) forControlEvents:UIControlEventValueChanged];
     self.genderSegCon.tintColor = [UIColor colorWithRed:0.243 green:0.627 blue:0.929 alpha:1];
