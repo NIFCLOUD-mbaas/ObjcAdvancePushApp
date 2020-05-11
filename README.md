@@ -793,21 +793,22 @@ layout: false
 ```objc
 // 【mBaaS：プッシュ通知①】デバイストークンの取得
 // デバイストークンの要求
-if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1){
-    /** iOS8以上 **/
-    //通知のタイプを設定したsettingを用意
-    UIUserNotificationType type = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
-    UIUserNotificationSettings *setting;
-    setting = [UIUserNotificationSettings settingsForTypes:type
-    categories:nil];
-    //通知のタイプを設定
-    [[UIApplication sharedApplication] registerUserNotificationSettings:setting];
-    //DevoceTokenを要求
-    [[UIApplication sharedApplication] registerForRemoteNotifications];
-} else {
-    /** iOS8未満 **/
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
-}
+//iOS10以上での、DeviceToken要求方法
+UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+[center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert |
+                                            UNAuthorizationOptionBadge |
+                                            UNAuthorizationOptionSound)
+                    completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                        if (error) {
+                            return;
+                        }
+                        if (granted) {
+                            //通知を許可にした場合DeviceTokenを要求
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                        [[UIApplication sharedApplication] registerForRemoteNotifications];
+                            });
+                        }
+                    }];
 ```
 
 ---
