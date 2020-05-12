@@ -2,7 +2,7 @@ name: inverse
 layout: true
 class: center, middle, inverse
 ---
-# <span style="font-size: 30%">【Objective-C編】ニフティクラウドmobile backend レベルアップセミナー</span><br>__クーポン配信アプリ<br>を作ろう！__</span>
+# <span style="font-size: 30%">【Objective-C編】ニフクラmobile backend レベルアップセミナー</span><br>__クーポン配信アプリ<br>を作ろう！__</span>
 
 @ニフティ株式会社
 
@@ -12,13 +12,19 @@ class: center, middle, inverse
 ---
 layout: false
 ## 事前準備
-ニフティクラウドmobile backendのアカウント登録がお済みでない方は、<br>
-[ホームページ](http://mb.cloud.nifty.com/about.htm)右上にある「無料登録」ボタンをクリックして、<br>
+ニフクラmobile backendのアカウント登録がお済みでない方は、<br>
+[ホームページ](https://mbaas.nifcloud.com/about.htm)右上にある「無料登録」ボタンをクリックして、<br>
 アカウント登録を実施してください
 
 ![mBaaS検索](readme-image/mBaaS検索.png)
 
 ![mBaaS無料登録](readme-image/mBaaS無料登録.png)
+
+### 動作環境
+* iOS: OS ver.10.0 ~ ver.13.4
+* 端末: iphone 8 (13.4)
+* Xcode: ver.11.4 
+* MacOS: ver.10.15.4 
 
 ---
 ## 今回のハンズオンセミナーについて
@@ -72,7 +78,7 @@ layout: false
 ]
 
 ---
-## ニフティクラウド mobile backendとは
+## ニフクラ mobile backendとは
 ### サービス紹介
 
 * スマホアプリで汎用的に実装される機能を、クラウドサービスとして提供しているサービスです
@@ -83,24 +89,24 @@ layout: false
 ]
 
 ---
-## ニフティクラウド mobile backendとは
+## ニフクラ mobile backendとは
 ### iOS SDKの特徴
 
 * SDKのインストールが必要です
- * 今回は実装済み
- * 参考：[クイックスタート](http://mb.cloud.nifty.com/doc/current/introduction/quickstart_ios.html)
+    * 今回は実装済み
+    * 参考：[クイックスタート](https://mbaas.nifcloud.com/doc/current/introduction/quickstart_ios.html)
 * SDKの初期化処理が必要です
- * 後で処理を実装します
+     * 後で処理を実装します
 
 ```objc
 [NCMB setApplicationKey:@"YOUR_NCMB_APPLICATIONKEY" clientKey:@"YOUR_NCMB_CLIENTKEY"];
 ```
 
 ---
-## ニフティクラウド mobile backendとは
+## ニフクラ mobile backendとは
 ### iOS SDKの特徴
 
-* サーバへリクエスト処理には、__同期処理__と__非同期処理__があります
+* サーバへリクエスト処理には、__同期処理__ と __非同期処理__ があります
 
 ```objc
 // 例）保存の場合
@@ -111,8 +117,8 @@ saveInBackgroundWithBlock:nil
 ```
 
 * 同期処理と非同期処理
- * 同期処理はその処理が完了するまで、次の処理が実行されません
- * 非同期処理はバックグラウンドで処理を実行し、次の処理を実行します
+    * 同期処理はその処理が完了するまで、次の処理が実行されません
+    * 非同期処理はバックグラウンドで処理を実行し、次の処理を実行します
 
 ---
 ## ハンズオンの概要
@@ -120,11 +126,11 @@ saveInBackgroundWithBlock:nil
 
 * クーポン配信アプリをイメージした「mBaaS Shop List」アプリの作成を通して、mBaaSの機能を理解していきます
 * mBaaSの連携部分をコーディングし、アプリを完成させ、次の内容を実現していきます
- * 会員登録をするとお店情報を見ることができます
- * お店のお気に入り登録ができ、お気に入り登録をしたお店からプッシュ通知で届きます
- * 性別や都道府県限定のプッシュ通知ができます
- * お店からのプッシュ通知でクーポンを直接配信することができます
- * 決まった時間に通知を出すようにプッシュ通知を仕掛けることができます
+    * 会員登録をするとお店情報を見ることができます
+    * お店のお気に入り登録ができ、お気に入り登録をしたお店からプッシュ通知で届きます
+    * 性別や都道府県限定のプッシュ通知ができます
+    * お店からのプッシュ通知でクーポンを直接配信することができます
+    * 決まった時間に通知を出すようにプッシュ通知を仕掛けることができます
 
 ---
 ## ハンズオンの概要
@@ -177,7 +183,7 @@ layout: false
 
 下記リンクをクリックして、ZIPファイルでダウンロードしてください▼<br>
 .size_large[
-　　　 __[ObjcAdvancePushApp](https://github.com/NIFTYCloud-mbaas/ObjcAdvancePushApp/archive/seminar_version.zip)__
+　　　 __[ObjcAdvancePushApp](https://github.com/NIFCLOUD-mbaas/ObjcAdvancePushApp/archive/seminar_version.zip)__
 ]
 
 * ディレクトリにある「__ObjcAdvancePushApp.xcworkspace__」をダブルクリックして、Xcodeを開いてください
@@ -188,13 +194,13 @@ layout: false
 
 * mBaaS iOS SDKのインストール
 * mBaaSとの連携以外の処理のコーディング
- * アプリのデザインを`Main.storyboard`で作成し、処理は画面ごと`ViewController`にコーディングしています
+    * アプリのデザインを`Main.storyboard`で作成し、処理は画面ごと`ViewController`にコーディングしています
 
 ---
 ## ハンズオンの準備
 ### mBaaSの準備
 
-* [mBaaS](http://mb.cloud.nifty.com)にログインしてアプリを作成します
+* [mBaaS](https://mbaas.nifcloud.com)にログインしてアプリを作成します
 
 ![mBaaSアプリ作成](readme-image/mBaaSアプリ作成.png)
 
@@ -211,7 +217,7 @@ layout: false
 ```
 
 * 初期化処理の「`YOUR_NCMB_APPLICATIONKEY`」，「`YOUR_NCMB_CLIENTKEY`」の部分をアプリ作成時に発行されたAPIキーに書き換えてください
- * APIキーは、mBaaSのダッシュボードから「アプリ設定」→「基本」にあります
+    * APIキーは、mBaaSのダッシュボードから「アプリ設定」→「基本」にあります
 
 ---
 layout: true
@@ -337,13 +343,13 @@ self.statusLabel.text = @"";
 * ここではシュミレーターでビルドし、動作確認を行います
 * ログイン画面で「会員登録」をタップします
 * 会員登録画面でメールアドレスを入力し「登録メールを送信」をタップします
- * ログを確認してください
+    * ログを確認してください
 
 .center[
 ![動作確認①ログイン](readme-image/動作確認①ログイン.png)
 ]
 .footnote[
-[エラーコード一覧](http://mb.cloud.nifty.com/doc/current/rest/common/error.html#REST%20API%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+[エラーコード一覧](https://mbaas.nifcloud.com/doc/current/rest/common/error.html#REST%20APIのエラーコードについて)
 ]
 
 ---
@@ -361,15 +367,15 @@ self.statusLabel.text = @"";
 ### 動作確認(1)ログインをしてみましょう
 
 * 再びログイン画面に戻り「メールアドレス」と「パスワード」でログインします
- * ログを確認してください
+    * ログを確認してください
 * mBaaSのダッシュボードを確認してください
- * 会員管理にユーザーが登録されました
+    * 会員管理にユーザーが登録されました
 
 .center[
 ![動作確認①会員登録完了](readme-image/動作確認①会員登録完了.png)
 ]
 .footnote[
-[エラーコード一覧](http://mb.cloud.nifty.com/doc/current/rest/common/error.html#REST%20API%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+[エラーコード一覧](https://mbaas.nifcloud.com/doc/current/rest/common/error.html#REST%20APIのエラーコードについて)
 ]
 
 ---
@@ -459,7 +465,7 @@ layout: false
 ## Shop情報の設定
 ### mBaaSにShop情報を用意する（データストア）
 
-* ニフティクラウド mobile backendのダッシュボードから「データストア」を開き、「＋作成▼」ボタンをクリックし、「インポート」をクリックします
+* ニフクラ mobile backendのダッシュボードから「データストア」を開き、「＋作成▼」ボタンをクリックし、「インポート」をクリックします
 * クラス名に「__Shop__」と入力します
 * ダウンロードしたサンプルプロジェクトにあるSettingフォルダ内の「__Shop.json__」を選択してアップロードします
 
@@ -481,7 +487,7 @@ layout: false
 ## Shop情報の設定
 ### mBaaSにShop情報を用意する（ファイルストア）
 
-* ニフティクラウド mobile backendのダッシュボードから「ファイルストア」を開き、「↑アップロード」ボタンをクリックします
+* ニフクラ mobile backendのダッシュボードから「ファイルストア」を開き、「↑アップロード」ボタンをクリックします
 * ダウンロードしたサンプルプロジェクトにあるSettingフォルダ内の「icon」「Shop」「Sale」内にあるファイルをすべてをアップロードします
 
 .center[
@@ -554,7 +560,7 @@ self.appDelegate.shopList = objects;
 ### ファイルストア①：icon画像の取得
 
 * `CustomCell.m`を開きます
- * `CustomCell.m`はテーブルのセルを作成するファイルです
+    * `CustomCell.m`はテーブルのセルを作成するファイルです
 * トップ画面に各ショップのアイコンをmBaaSから取得して表示する処理を実装します
 
 ```objc
@@ -631,14 +637,14 @@ NCMBFile *imageFile = [NCMBFile fileWithName:imageName data:nil];
 * 再びシュミレーターでビルドし、動作確認を行います
 * ログイン後初回のみ、ユーザー情報登録画面が表示されます
 * 入力し「登録」をタップします
- * このとき、会員情報が更新されますので、mBaaSのダッシュボードを確認してみましょう
- * ログを確認してください
+    * このとき、会員情報が更新されますので、mBaaSのダッシュボードを確認してみましょう
+    * ログを確認してください
 
 .center[
 ![動作確認②ユーザー情報追加](readme-image/動作確認②ユーザー情報追加.png)
 ]
 .footnote[
-[エラーコード一覧](http://mb.cloud.nifty.com/doc/current/rest/common/error.html#REST%20API%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+[エラーコード一覧](https://mbaas.nifcloud.com/doc/current/rest/common/error.html#REST%20APIのエラーコードについて)
 ]
 
 ---
@@ -647,15 +653,15 @@ NCMBFile *imageFile = [NCMBFile fileWithName:imageName data:nil];
 
 * トップ画面に「icon画像」「Shop名」「カテゴリ」が表示されます
 * Shopを１つ選んでタップします
- * mBaaSに登録されているimageにアクセスし、Shopページ（画像）が表示されます
+    * mBaaSに登録されているimageにアクセスし、Shopページ（画像）が表示されます
 * 会員ページをタップします
- * ユーザー情報が表示されます
+    * ユーザー情報が表示されます
 
 .center[
 ![動作確認②](readme-image/動作確認②.png)
 ]
 .footnote[
-[エラーコード一覧](http://mb.cloud.nifty.com/doc/current/rest/common/error.html#REST%20API%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+[エラーコード一覧](https://mbaas.nifcloud.com/doc/current/rest/common/error.html#REST%20APIのエラーコードについて)
 ]
 
 ---
@@ -670,8 +676,8 @@ layout: false
 ### お気に入り機能について
 
 * お気に入り機能は好きなShopをお気に入りとして保存できる機能です
- * 「お気に入り」画面ではSwitchと「登録」ボタンで設定します
- * 「Shop」画面では右上のハートマークをタップすることでShop単位で設定できます(♥…ON,♡…OFF)
+    * 「お気に入り」画面ではSwitchと「登録」ボタンで設定します
+    * 「Shop」画面では右上のハートマークをタップすることでShop単位で設定できます(♥…ON,♡…OFF)
 
 .center[
 ![favorite](readme-image/favorite.png)
@@ -736,14 +742,14 @@ NCMBUser *user = [NCMBUser currentUser];
 * ログイン後トップ画面下の「お気に入り」をタップします
 * お気に入り画面からお気に入り登録をしてみましょう
 * 各Shop画面からも同様に登録してみましょう
- * ログを確認してください
+    * ログを確認してください
 
 .center[
 ![動作確認③](readme-image/動作確認③.png)
 ]
 
 .footnote[
-[エラーコード一覧](http://mb.cloud.nifty.com/doc/current/rest/common/error.html#REST%20API%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+[エラーコード一覧](https://mbaas.nifcloud.com/doc/current/rest/common/error.html#REST%20APIのエラーコードについて)
 ]
 
 ---
@@ -768,10 +774,10 @@ layout: false
 ### このあとのデバッグについて
 
 * 以下の用意が必要です
- * デバッグ用の実機
- * プッシュ通知用証明書(p12形式)
+    * デバッグ用の実機
+    * プッシュ通知用証明書(p12形式)
 * 証明書の取得がまだの場合は下記をご参照ください
- * [【サンプル】アプリにプッシュ通知を組み込もう！](https://github.com/NIFTYCloud-mbaas/objcPushApp)
+    * [【サンプル】アプリにプッシュ通知を組み込もう！](https://github.com/NIFCLOUD-mbaas/ObjcPushApp)
 
 ---
 ## プッシュ通知の準備
@@ -1013,7 +1019,7 @@ if (installation) {
 ]
 
 .footnote[
-[エラーコード一覧](http://mb.cloud.nifty.com/doc/current/rest/common/error.html#REST%20API%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+[エラーコード一覧](https://mbaas.nifcloud.com/doc/current/rest/common/error.html#REST%20APIのエラーコードについて)
 ]
 
 ---
@@ -1021,21 +1027,21 @@ if (installation) {
 ### 動作確認の準備
 
 * ログインをし、再びユーザー登録をします
- * このとき、installationが更新されますのでダッシュボードを確認します
- * ログを確認してください
+    * このとき、installationが更新されますのでダッシュボードを確認します
+    * ログを確認してください
 
 .center[
 ![動作確認④installation追加](readme-image/動作確認④installation追加.png)
 ]
 .footnote[
-[エラーコード一覧](http://mb.cloud.nifty.com/doc/current/rest/common/error.html#REST%20API%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+[エラーコード一覧](https://mbaas.nifcloud.com/doc/current/rest/common/error.html#REST%20APIのエラーコードについて)
 ]
 
 ---
 ## プッシュ通知を送信：セグメント配信
 ### 動作確認(4)セグメント配信
 
-__shopB__をお気に入り登録しているユーザーに絞り込んでプッシュ通知を配信してみましょう！
+__shopB__ をお気に入り登録しているユーザーに絞り込んでプッシュ通知を配信してみましょう！
 
 * あらかじめshopBをお気に入りに設定しておきます(アプリ側)
 * mBaaSのダッシュボードからShopクラスのデータを開き、shopBの「objectId」をコピーします
@@ -1050,7 +1056,7 @@ __shopB__をお気に入り登録しているユーザーに絞り込んでプ�
 
 * プッシュ通知を作成します
 * メッセージを入力します
- * 例：ShopBセール開催中！
+    * 例：ShopBセール開催中！
 * 「iOS端末に配信する」にチェックを入れます
 * 「配信端末」を設定します
 
@@ -1064,7 +1070,7 @@ __shopB__をお気に入り登録しているユーザーに絞り込んでプ�
 
 * 「installationクラスからの絞込み」を選択します
 * 絞り込み設定をします
- * ここでコピーしたShopBのobjectIdを貼り付けます
+    * ここでコピーしたShopBのobjectIdを貼り付けます
 
 .center[
 ![動作確認④セグメント3](readme-image/動作確認④セグメント3.png)
@@ -1109,7 +1115,7 @@ layout: false
 
 * プッシュ通知登録時にURLを指定することで、開封時にWebビューを表示できる機能です
 * プッシュ通知開封でアプリが起動するときに表示されます
- * アプリ起動中には表示されませんので動作確認にはアプリを閉じておく必要があります（仕様）
+    * アプリ起動中には表示されませんので動作確認にはアプリを閉じておく必要があります（仕様）
 
 ---
 ## プッシュ通知を送信：リッチプッシュ
@@ -1145,7 +1151,7 @@ layout: false
 
 * ファイルストアで確認できます
 * 今回は「ShopD_sale.png」の公開ファイルURLを使用してみます
- * URLをコピーします
+    * URLをコピーします
 
 .center[
 ![公開ファイルURL](readme-image/公開ファイルURL.png)
@@ -1238,10 +1244,10 @@ layout: false
 
 * プッシュ通知にはJSON形式で任意のデータを含めることができ、通知を受信した時に、そのデータを受け取って処理を行うことができる機能です
 * データ取得の条件
- * アプリの起動中にプッシュ通知を受信してデータを取得
- * プッシュ通知受信後、アプリを起動時にデータを取得
+    * アプリの起動中にプッシュ通知を受信してデータを取得
+    * プッシュ通知受信後、アプリを起動時にデータを取得
 * 今回は、配信時間とメッセージのデータを設定し、時限式でローカルプッシュを表示させる内容を実装します
- * プッシュ通知に設定するJSON形式のデータの例
+    * プッシュ通知に設定するJSON形式のデータの例
  ```text
  {"deliveryTime":"2016-09-13 17:00:00", "message":"タイムセールスタート！"}
  ```
@@ -1321,8 +1327,8 @@ if (deliveryTime && message) {
 ### 動作確認(6)ペイロード（アプリ起動時）
 
 * プッシュ通知に設定するJSON形式のデータを作成します
- * JSONデータに設定する時間は、今から__５分以上未来の時間__に変更してください
- * JSONデータに設定するメッセージは、自由に変更してください
+    * JSONデータに設定する時間は、今から __５分以上未来の時間__ に変更してください
+    * JSONデータに設定するメッセージは、自由に変更してください
  ```text
  {"deliveryTime":"2016-09-13 17:00:00", "message":"タイムセールスタート！"}
  ```
@@ -1333,8 +1339,8 @@ if (deliveryTime && message) {
 ### 動作確認(6)ペイロード（アプリ起動時）
 
 * プッシュ通知を作成します
- * メッセージを入力が無い場合、サイレントプッシュとして送られます
- * 「JSON」に作成したJSONデータを貼り付けます
+    * メッセージを入力が無い場合、サイレントプッシュとして送られます
+    * 「JSON」に作成したJSONデータを貼り付けます
 
 .center[
 ![動作確認⑥ペイロード1](readme-image/動作確認⑥ペイロード1.png)
@@ -1354,7 +1360,7 @@ if (deliveryTime && message) {
 * 指定時間にプッシュ通知が表示されることを確認してください
 
 .footnote[
-[エラーコード一覧](http://mb.cloud.nifty.com/doc/current/rest/common/error.html#REST%20API%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+[エラーコード一覧](https://mbaas.nifcloud.com/doc/current/rest/common/error.html#REST%20APIのエラーコードについて)
 ]
 ---
 ## プッシュ通知を送信：ペイロード
@@ -1373,9 +1379,9 @@ if (deliveryTime && message) {
 
 * アプリが起動していないので、サイレントプッシュでは気付いてもらえません
 * アプリを起動してもらう内容でプッシュ通知を作成します
- * メッセージ　例）`明日PM5時よりタイムセールを行います！`
+    * メッセージ　例）`明日PM5時よりタイムセールを行います！`
 * JSON形式のデータを貼り付けます
- * JSONデータ作成　例）翌日のPM5時を設定
+    * JSONデータ作成　例）翌日のPM5時を設定
  ```text
  {"deliveryTime":"2016-09-13 17:00:00", "message":"タイムセールスタート！"}
  ```
@@ -1387,7 +1393,7 @@ if (deliveryTime && message) {
 
 * プッシュ通知を受信したら、プッシュ通知からアプリを起動します
 * 起動時にデータを取得します
- * １度起動してあればアプリは閉じてもOKです
+    * １度起動してあればアプリは閉じてもOKです
 * 指定時間にプッシュ通知が表示されることを確認してください
 
 ---
@@ -1402,22 +1408,28 @@ layout: false
 ### 学んだこと
 
 * mBaaSの各機能を使用してアプリ作成方法を学んだ！
- * 会員管理機能
- * データストア
- * ファイルストア
- * プッシュ通知
+    * 会員管理機能
+    * データストア
+    * ファイルストア
+    * プッシュ通知
 * プッシュ通知の活用方法がわかった！
- * セグメント配信
- * リッチプッシュ
- * ペイロード
+    * セグメント配信
+    * リッチプッシュ
+    * ペイロード
 
 ---
 ## 参考
 
 * 開催中の[セミナー](https://ncmb.doorkeeper.jp/)のご案内
- * 随時新しいセミナーを実施していきますのでぜひチェックしてください！
+    * 随時新しいセミナーを実施していきますのでぜひチェックしてください！
 * ハンズオン内容が実装された完全版プロジェクト
- * __[ObjcAdvancePushApp【完成版】](https://github.com/NIFTYCloud-mbaas/objcAdvancePushApp/archive/master.zip)__
+    * __[ObjcAdvancePushApp【完成版】](https://github.com/NIFTYCloud-mbaas/objcAdvancePushApp/archive/master.zip)__
 * コードは[GitHub](https://github.com/NIFTYCloud-mbaas/objcAdvancePushApp)に公開しています
- * __master__：完成版
- * __seminar_version__：セミナー版
+    * __master__：完成版
+    * __seminar_version__：セミナー版
+* PodファイルのInstall方法
+    1. ターミナルを開き
+    2. cd <project> フォルダ
+    3. `pod install`で実施 
+    4. `<app>.xcworkspace`を開き
+
