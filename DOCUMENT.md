@@ -190,11 +190,89 @@ layout: false
 
 ---
 ## ハンズオンの準備
-### プロジェクトにあらかじめ実施していること
+### mBaaS iOS SDKのインストール
+* ターミナルで以下を実行します
+  * 先ほどダウンロードしたフォルダ内にある Xcode プロジェクト「ObjcAdvancePushApp.xcodeproj」と同じディレクトリに移動
+  ```bash
+  $ cd 'プロジェクトパス'
+  ```
+<br><br><br>
 
-* mBaaS iOS SDKのインストール
-* mBaaSとの連携以外の処理のコーディング
-    * アプリのデザインを`Main.storyboard`で作成し、処理は画面ごと`ViewController`にコーディングしています
+.size_small_7[
+* 通常はここでインストールするライブラリを指定するファイル「Podfile」を作成し編集して利用しますが、今回のサンプルには既に Podfile を準備していますのでそちらを使用します
+  * （参考）Podfile 作成 .color_red[.size_small_7[※ ここでは実行不要です]]
+  ```bash
+  $ pod init
+  ```
+]
+---
+.footnote_right[
+.right[
+ハンズオン<br>2. Xcode の準備
+]
+]
+## ハンズオンの準備
+### mBaaS iOS SDKのインストール
+
+* 先ほどダウンロードしたフォルダ内にある「Podfile」を確認します
+
+```ruby
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'iOSFormApp2' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  pod 'NCMB', :git => 'https://github.com/NIFCloud-mbaas/ncmb_ios.git'
+  pod 'UITextView+Placeholder'
+  pod 'ProgressHUD'
+  pod 'IQKeyboardManager'
+
+end
+```
+
+---
+.footnote_right[
+.right[
+ハンズオン<br>2. Xcode の準備
+]
+]
+## ハンズオンの準備
+### mBaaS iOS SDKのインストール
+
+
+* ターミナルで以下を実行します
+  * podfileに書いた内容で SDK をインストール
+  ```bash
+  $ pod install
+  ```
+  * 基本は上記コマンドでインストールを行いますが、短時間でインストールが必要な場合は下記が利用可能です
+  ```bash
+  $ pod install --no-repo-update
+  ```
+
+---
+.footnote_right[
+.right[
+ハンズオン<br>2. Xcode の準備
+]
+]
+### プロジェクトにあらかじめ実施していること
+#### mBaaS iOS SDKのインストール
+* Xcode プロジェクト「ObjcAdvancePushApp.xcworkspace」が作成されます
+
+.center[<img src="document-img/create_workspace.png" alt="terminalcreate_workspace_icon" width="450px">]
+
+---
+.footnote_right[
+.right[
+ハンズオン<br>2. Xcode の準備
+]
+]
+### プロジェクトにあらかじめ実施していること
+#### mBaaSとの連携以外の処理のコーディング
+* アプリのデザインを`Main.storyboard`で作成し、処理は画面ごと`ViewController`にコーディングしています
 
 ---
 ## ハンズオンの準備
@@ -1427,9 +1505,3 @@ layout: false
 * コードは[GitHub](https://github.com/NIFTYCloud-mbaas/objcAdvancePushApp)に公開しています
     * __master__：完成版
     * __seminar_version__：セミナー版
-* PodファイルのInstall方法
-    1. ターミナルを開き
-    2. cd <project> フォルダ
-    3. `pod install`で実施 
-    4. `<app>.xcworkspace`を開き
-
