@@ -262,7 +262,7 @@ end
 #### mBaaS iOS SDKのインストール
 * Xcode プロジェクト「ObjcAdvancePushApp.xcworkspace」が作成されます
 
-.center[<img src="document-img/create_workspace.png" alt="terminalcreate_workspace_icon" width="450px">]
+.center[<img src="readme-image/create_workspace.png" alt="terminalcreate_workspace_icon" width="250px">]
 
 ---
 .footnote_right[
