@@ -18,7 +18,7 @@ layout: false
 
 ![mBaaS検索](readme-image/mBaaS検索.png)
 
-![mBaaS無料登録](readme-image/mBaaS無料登録.png)
+<img src="readme-image/mBaaS無料登録.png" alt="terminalcreate_workspace_icon" width="400px">
 
 ### 動作環境
 * iOS: OS ver.10.0 ~ ver.13.4
